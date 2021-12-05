@@ -35,20 +35,3 @@ spec:
         ports:
         - containerPort: 80
         
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: go-hello-ingress
-  annotations:
-    allow.http: "false"
-spec:
-  rules:
-  - host: go.rancher.redblock.com.br
-  http:
-    paths:
-      - path: /
-        backend:
-          serviceName: helloserver-service
-          servicePort: 80
-
